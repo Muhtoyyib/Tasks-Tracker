@@ -7,17 +7,19 @@ function newTask(){
     let newTask = document.createElement('li');
     let toDoList = document.getElementById('to-do-list');
     let check = document.createElement('input');
-    let div= document.createElement('div');
 
 
 
     newTask.appendChild(document.createTextNode(inputBox.value));
-    check.classList.add('form-check-input', 'me-5');
+    check.classList.add('form-check-input','myClass');
     check.setAttribute('type', 'checkbox');
     newTask.appendChild(check);
     toDoList.appendChild(newTask);
-    inputBox.value = " ";
-};
+
+
+    return inputBox.value = "";
+}
+   
 
 function addTask(){
     if(inputBox.value.length > 0){
@@ -25,10 +27,25 @@ function addTask(){
         errorMessage.innerHTML = '';
     } else if(inputBox.value.length === 0) {
         errorMessage.innerHTML = 'Please Add a List!';
-    }
+    } 
+
+}
+
+function addListAfterKeypress(event) {
+	if (inputBox.value.length > 0 && event.keyCode === 13) {
+		newTask();
+	} else if(inputBox.value.length === 0 && event.keyCode === 13) {
+        errorMessage.innerHTML = 'Please Add a List!';
+    } 
 }
 
 
 
+
+
+
+
+
 addButton.addEventListener('click', addTask);
+inputBox.addEventListener("keypress", addListAfterKeypress);
 
