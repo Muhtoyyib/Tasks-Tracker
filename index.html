@@ -17,18 +17,20 @@
                 <div class="p-5 mb-4 bg-dark rounded-3">
                     <div class="container-fluid py-5">
                     <h1 class="display-5 fw-bold text-center text-primary">What Am I Doing Today?</h1>
+                    <br>
+                    <p class="text-danger text-center" id="error-message"></p>
 
                     <!--InputTask-->
                     <div class="row mt-4 mx-auto mx-sm-auto">
 
                         <div class="col-6 offset-1 col-md-5 offset-md-3">
                            <div class="input-group">
-                            <input class="form-control center" type="text" placeholder="Add Task" id="input-box">
+                            <input class="form-control text-dark" type="text" placeholder="Add Task" id="input-box" required>
                            </div>
                         </div>
 
                         <div class="col-3 col-md-4">
-                            <button type="button" class="btn btn-success">Add</button>
+                            <button type="button" class="btn btn-primary" id="add-button">Add</button>
                         </div>
 
                     </div>
@@ -41,22 +43,24 @@
               <!--Task Container-->
 
                 <div class="p-5 mt-4 mb-4 bg-dark rounded-3">
-                    <div class="ontainer-fluid py-5">
+                    <div class="container-fluid py-5">
                         <div class="row">
 
                             <!--New task-->
-                            <div class="col-sm-12 col-md-4 mx-auto center">
-                                <ul>
+                            <div class="col-sm-12 col-md-4 mx-auto">
+                                <h2 class="text-primary">Tasks To-do</h2>
+                                <ol id="to-do-list" class="text-light">
                                     
-                                </ul>
+                                </ol>
     
                             </div>
 
                             <!--Completed-task-->
-                            <div class="col-sm-12 col-md-4 offset-md-2 center">
-                                <ul>
-                                    
-                                </ul>
+                            <div class="col-sm-12 col-md-4 mb-3">
+                                <h2 class="text-primary">Tasks Completed</h2>
+                                <ol class="text-light">
+                                
+                                </ol>
                             </div>
 
                         </div>
