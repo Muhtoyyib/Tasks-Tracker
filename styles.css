@@ -7,4 +7,6 @@ body{
     background-color: black;
 }
 
-
+.myClass{
+    margin-left: 15px;
+}
