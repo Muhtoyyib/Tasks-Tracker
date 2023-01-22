@@ -5,8 +5,45 @@
 
 body{
     background-color: black;
+    font-family: 'Jost', sans-serif;
+    color: #7A9E9F;
 }
 
-.myClass{
+.my-class{
     margin-left: 15px;
+}
+
+.button{
+    color: #fff;
+    background-color: #7A9E9F;  
+    font-size: 0.8rem; 
+}
+
+.ready{
+    color: #ee9f27;
+    background-color: #fff;
+    font-size: 0.7rem;
+}
+
+.done{
+    color: #fff;
+    font-size: 0.7rem; 
+}
+
+.to-do-list{
+    color: #ee9f27;
+}
+
+.text-big{
+    font-size: 1.4em;
+}
+
+a{
+    text-decoration: none;
+    color: #7A9E9F;
+    font-weight: bolder;
+}
+
+a:hover{
+    color: #000;
 }

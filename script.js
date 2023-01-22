@@ -14,23 +14,27 @@ function newTask(){
 
     let newTask = document.createElement('li');
     let toDoList = document.getElementById('to-do-list');
-    let check = document.createElement('input');
+    let button = document.createElement('button');
 
     newTodo = {...newTodo, value: inputBox.value};
 
 
     newTask.appendChild(document.createTextNode(newTodo.value));
-    check.classList.add('form-check-input','myClass');
-    check.setAttribute('type', 'checkbox');
-    newTask.classList.add('myTodos');
-    newTask.appendChild(check);
+    button.classList.add('btn','btn-sm','ready', 'my-class');
+    button.appendChild(document.createTextNode('Mark as done'));
+    newTask.appendChild(button);
     toDoList.appendChild(newTask);
 
     inputBox.value = "";
 
     function completedTask(){
-        newTask.addEventListener('click', ()=>{
+        button.addEventListener('click', ()=>{
             newTodo = {...newTodo, done: true};
+            button.classList.remove('ready');
+            button.classList.add('btn-success');
+            button.innerHTML = '';
+            newTask.style.color = 'white';
+            button.appendChild(document.createTextNode('Remove'));
             const completedTasks = document.getElementById('completed-list');
     
             if(newTodo.done === true){
@@ -40,6 +44,25 @@ function newTask(){
     }
 
     completedTask();
+
+    function removeTask(){
+        button.addEventListener('dblclick', ()=>{
+            newTodo = {...newTodo, done: false};
+            button.classList.remove('btn-success');
+            button.classList.add('btn-ready');
+            button.classList.add('btn','btn-sm','ready', 'my-class');
+            button.innerHTML = '';
+            button.appendChild(document.createTextNode('Mark as done'));
+           
+    
+            if(newTodo.done === false){
+                newTask.style.color = '#ee9f27';
+                toDoList.appendChild(newTask);
+            }
+        })
+    }
+
+    removeTask();
 
 
 }
@@ -60,15 +83,10 @@ function addTask(){
 function addTaskAfterKeypress(event) {
 	if (inputBox.value.length > 0 && event.keyCode === 13) {
 		newTask();
+        errorMessage.innerHTML = '';
 	} else if(inputBox.value.length === 0 && event.keyCode === 13) {
         errorMessage.innerHTML = 'Please Add a Task!';
     } 
-}
-
-
-
-function completedTask(){
-    console.log(tasks)
 }
 
 
