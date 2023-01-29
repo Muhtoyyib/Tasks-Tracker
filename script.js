@@ -31,9 +31,9 @@ function newTask(){
         button.addEventListener('click', ()=>{
             newTodo = {...newTodo, done: true};
             button.classList.remove('ready');
-            button.classList.add('btn-success');
+            button.classList.add('btn-danger');
             button.innerHTML = '';
-            newTask.style.color = 'white';
+            newTask.style.color = '#7A9E9F';
             button.appendChild(document.createTextNode('Remove'));
             const completedTasks = document.getElementById('completed-list');
     
