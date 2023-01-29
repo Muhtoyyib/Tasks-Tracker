@@ -25,6 +25,11 @@ body{
     font-size: 0.7rem;
 }
 
+.ready:hover{
+    background-color: #fff;
+    color: green;
+}
+
 .done{
     color: #fff;
     font-size: 0.7rem; 
