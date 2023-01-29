@@ -7,6 +7,8 @@ body{
     background-color: black;
     font-family: 'Jost', sans-serif;
     color: #7A9E9F;
+    background-image: url('images/Task-image.jpeg');
+    height: 100vh;
 }
 
 .my-class{
